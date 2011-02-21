@@ -2,12 +2,12 @@ require 'redmine'
 
 require 'dispatcher'
 
-Dispatcher.to_prepare :forward_to_diffs do
+Dispatcher.to_prepare :diff_forward do
     require_dependency 'application_helper'
     ApplicationHelper.send(:include, DiffForwardPluginPatch) unless ApplicationHelper.included_modules.include?(DiffForwardPluginPatch)
 end
 
-Redmine::Plugin.register :forward_to_diffs do
+Redmine::Plugin.register :diff_forward do
   name 'Forward to diffs'
   author 'Jon McManus'
   url 'http://github.com/jmcb/forward-to-diffs'
