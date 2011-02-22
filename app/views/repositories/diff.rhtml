@@ -1,6 +1,6 @@
 <h2><%= l(:label_revision) %> <%= format_revision(@rev_to) + ':' if @rev_to %><%= format_revision(@rev) %> <%=h @path %></h2>
 
-<p><%= link_to 'Return to diff overview', url: => params.merge(:action => 'diff') %></p>
+<p><%= link_to('Revision overview', :url => params.merge({:action => 'revision'}, :caption => 'Revision overview') %></p>
 
 <!-- Choose view type -->
 <% form_tag({:path => to_path_param(@path)}, :method => 'get') do %>
