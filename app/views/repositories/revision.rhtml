@@ -21,6 +21,8 @@
 
 <h2><%= l(:label_revision) %> <%= format_revision(@changeset.revision) %></h2>
 
+<p class="other-formats"><%= link_to "(View source tree.)", {:action => "show", :controller => "repositories", :rev => @changeset.revision} %></p>
+
 <p><% if @changeset.scmid %>ID: <%= @changeset.scmid %><br /><% end %>
 <span class="author"><%= authoring(@changeset.committed_on, @changeset.author) %></span></p>
 
