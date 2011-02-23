@@ -1,6 +1,6 @@
 <h2><%= l(:label_revision) %> <%= format_revision(@rev_to) + ':' if @rev_to %><%= format_revision(@rev) %> <%=h @path %></h2>
 
-<p>(Return to <%= link_to 'revision overview', {:action => 'revision', :rev => @rev, :controller => 'repositories'} if @rev %><%= link_to 'revision overview', {:action => 'revision', :rev => @rev_to, :controller => 'repositories'} if @rev_to %>.)</p>
+<p class="other-formats">Return to <%= link_to 'revision overview', {:action => 'revision', :rev => @rev, :controller => 'repositories'} if @rev %><%= link_to 'revision overview', {:action => 'revision', :rev => @rev_to, :controller => 'repositories'} if @rev_to %>.</p>
 
 <!-- Choose view type -->
 <% form_tag({:path => to_path_param(@path)}, :method => 'get') do %>
